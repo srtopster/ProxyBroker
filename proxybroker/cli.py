@@ -385,7 +385,6 @@ def cli(args=sys.argv[1:]):
         judges=ns.judges,
         providers=ns.providers,
         verify_ssl=ns.verify_ssl,
-        loop=loop,
     )
 
     if ns.command in ('find', 'grab'):
