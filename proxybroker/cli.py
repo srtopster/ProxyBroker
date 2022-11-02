@@ -376,6 +376,7 @@ def cli(args=sys.argv[1:]):
         ns.types.remove('HTTP')
         ns.types.append(('HTTP', ns.anon_lvl))
 
+    loop = asyncio.get_event_loop()
     proxies = asyncio.Queue()
     broker = Broker(
         proxies,
@@ -385,6 +386,7 @@ def cli(args=sys.argv[1:]):
         judges=ns.judges,
         providers=ns.providers,
         verify_ssl=ns.verify_ssl,
+        loop=loop,
     )
 
     if ns.command in ('find', 'grab'):
