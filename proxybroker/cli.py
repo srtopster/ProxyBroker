@@ -430,7 +430,7 @@ def cli(args=sys.argv[1:]):
 
     try:
         if tasks:
-            loop.run_until_complete(asyncio.gather(*tasks, loop=loop))
+            loop.run_until_complete(asyncio.gather(*tasks))
             if ns.show_stats:
                 broker.show_stats(verbose=True)
         else:
